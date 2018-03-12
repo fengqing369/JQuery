@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//1 创建元素操作
+
+		//1.1 相当于document.createElement()方式，创建的元素不会显示在页面中
+		var $div = $("<div></div>");
+		console.log($div);
+
+		//1.2 相当于innerHTML操作(会把之前的内容结构覆盖掉)
+		// $("#box").html("我是内容<div>我是div</div>");
+
+
+		//2 移动节点操作
+		//2.1 append()
+		// 添加到子节点的最后，相当于appendChild()
+		//$("#box").append($div);
+		//$("#box").append("<div>我是div</div>");
+
+		//2.2 prepend()
+		// 添加到子节点的最前面
+		//$("#box").prepend("<div>我是div</div>");
+
+		//2.3 after()
+		// 添加到当前元素的同级后面
+		// $("#box").after("<div>我是div</div>");
+
+		//2.4 before()
+		// 添加到当前元素的同级前面
+		//$("#box").before("<div>我是div</div>");
+
+
+		//注意：jQuery节点移动方式与DOM节点移动方式的区别
+
+		//DOM的移动节点方式，一个节点只能存在于某一个节点内部，不会同时存在
+		/*var text = $("#text")[0];
+		var div = document.getElementsByTagName("div");
+		div[0].appendChild(text);
+		div[1].appendChild(text);*/
+
+
+		//jQuery的移动节点方式可以将一个节点同时放入到多个节点内(多个副本)
+		//注意点：要移动的节点以及内部节点不要设置id属性，避免重复
+
+		//可以直接传入DOM对象(刘艳同学的思路)
+		/*var text = $("#text")[0];
+		$("div").append(text);*/
+
+	});
+</script>
+</head>
+<body>
+
+	<div id="box">
+		<span>我是span</span>
+		<span>我是span</span>
+		<span>我是span</span>
+		<span>我是span</span>
+	</div>
+	<!-- <p id="text">我是p标签</p>
+
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div> -->
+
+	
+</body>
+</html>

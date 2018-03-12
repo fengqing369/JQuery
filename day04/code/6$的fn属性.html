@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//1 $.fn 是jQuery的原型对象
+			//console.log($.prototype === $.fn);//true
+
+			//2 $不仅是一个函数，实际上还是一个构造函数
+
+			//回想一下jQuery的使用，$的大部分功能使用后均返回一个jQuery对象
+			//例如：$(document);   $("#box");
+
+			//我们就可以说$这个函数的作用就是用来创建对象的
+
+			//结论：$是构造函数，jQuery对象就是$的实例对象
+
+
+			//3 原型的方法
+			// 概念复习：原型的方法中的this指向实例对象
+			// $.fn 设置的方法中的this指向jQuery对象
+
+			//例子：
+			$.fn.lunBoTu = function(){
+				//console.log(this);
+				var $list = this.children("ul");
+
+			};
+
+			$("#box").lunBoTu();//打印$("#box")这个jQuery对象
+
+
+			//4 jQuery的插件就是通过给$.fn中设置方法实现的
+			//只要可以获取到this(jQuery对象),就可以操作所有的结构了
+			$("#box").lunBoTu();
+
+			
+
+
+
+
+		});
+	</script>
+</head>
+<body>
+
+	<div id="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ol>
+			<li>1</li>
+
+		</ol>
+	</div>
+</body>
+</html>

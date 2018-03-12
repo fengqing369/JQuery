@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			display:none;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//show组
+			//1 show()
+			// 不传参数表示显示(没有动画效果)
+			// 参数1：运动时间，毫秒形式或字符串形式
+			//				"fast"200 "normal"400 "slow"600  其他乱七八糟的字符串识别为400毫秒
+
+			// 参数2：回调函数，可选，表示运动完毕后执行的代码
+			$("#btn1").click(function(){
+				$("#box").show(1000,function(){
+					console.log("运动完毕了");
+				});
+
+			});
+
+
+			//2 hide()
+			//用法参考show(),表示对应的隐藏操作
+			$("#btn2").click(function(){
+				$("#box").hide(1000,function(){
+					console.log("运动完毕了");
+				});
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn1">显示</button>
+	<button id="btn2">隐藏</button>
+	<div id="box"></div>
+</body>
+</html>

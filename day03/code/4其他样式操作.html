@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;padding: 0;
+	}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 100px;
+			top: 50px;
+			border:10px solid #000;
+			/*margin:20px;*/
+		}
+		/* #fa{
+			width: 400px;
+			height: 400px;
+			border: 10px solid #000;
+			position: relative;
+		} */
+	</style>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//offset()方法
+			//1 获取的坐标针对页面
+			console.log($("#box").offset());
+
+			//2 设置操作
+			//如果设置时元素没有设置定位，会自动添加一个相对定位, 使用时注意，一定要自己添加绝对定位
+			/*$("#box").offset({
+				left:40,
+				top:20
+			})*/
+
+
+			//position()
+			//与js中的offset系列属性比较相似
+			//获取当前元素到定位父盒子之间的距离
+			//注意区别：计算方式：定位父盒子到当前元素的盒模型边界
+		 /* console.log($("#box").position());
+		  $("#box").position({
+		  	left:40,
+				top:20
+		  });
+		  console.log($("#box").position());*///无法进行修改
+
+		});
+	</script>
+
+	<div id="fa">
+		<div id="box"></div>
+	</div>
+
+</body>
+</html>

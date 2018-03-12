@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			display:none;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//fade组
+
+			//1 fadeIn(); 渐入
+			// 参数1：运动时间，可选参数，默认400
+			// 参数2：回调函数，可选参数
+			$("#btn1").click(function(){
+				$("#box").fadeIn(1000, function(){
+					console.log("我渐入了");
+				});
+			});
+
+			//2 fadeOut() 渐出
+			$("#btn2").click(function(){
+				$("#box").fadeOut(1000, function(){
+					console.log("我渐出了");
+				});
+			});
+
+			//3 fadeToggle() 切换
+			$("#btn3").click(function(){
+				$("#box").fadeToggle(1000, function(){
+					console.log("我切换了");
+				});
+			});
+
+			//4 fadeTo()  渐到什么程度
+			//参数1：必须参数，运动时间
+			//参数2：必须参数，渐变到的透明度值
+			//参数3：可选参数，回调函数
+
+			//注意：由于该方法会影响其他方法的效果(例如fadeIn无法再回到1)，所以通常不使用
+			$("#btn4").click(function(){
+				$("#box").fadeTo(1000, 0.3, function(){
+					console.log("渐变到0.3了");
+				});
+			
+			});
+			
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn1">渐入</button>
+	<button id="btn2">渐出</button>
+	<button id="btn3">切换</button>
+	<button id="btn4">渐到</button>
+	<div id="box"></div>
+</body>
+</html>

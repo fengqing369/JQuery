@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			height: 100px;
+			background-color: pink;
+			margin-bottom: 10px;
+			display: none;
+		}
+	</style>
+	<script>
+		/*//入口函数：
+		window.onload = function(){
+
+			//1 获取元素
+			var btn1 = document.getElementById("btn");
+			var btn2 = document.getElementById("btn2");
+			var divs = document.getElementsByTagName("div");
+
+			//2 设置点击事件，让div显示
+			btn1.onclick = function(){
+				for(var i = 0; i < divs.length ; i++){
+					divs[i].style.display = "block";
+				}
+			};
+
+
+
+			//3 设置点击事件，给div设置内容
+			btn2.onclick = function(){
+				for(var i = 0; i < divs.length ; i++){
+					divs[i].innerText = "我是div";
+				}
+			};
+
+		};
+
+		//js所具有的问题：
+		//1 js的基本事件设置方式具有覆盖的问题
+		//2 DOM的基本操作十分繁琐
+		//3 兼容性问题
+		//4 使用js实现动画效果十分麻烦
+		//5 容错性差
+		*/
+		
+	</script>
+
+<script src="jquery-2.2.4.min.js"></script>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		//js所具有的问题：
+		//1 js的基本事件设置方式具有覆盖的问题
+		//2 DOM的基本操作十分繁琐
+		//3 兼容性问题
+		//4 使用js实现动画效果十分麻烦
+		//5 容错性差
+
+
+		//没有对比就没有伤害，有了对比，处处戳中要害
+		//虽然js感觉一无是处，但是js依旧是重中之重
+		//那怕jq不会，也要会js
+
+		$(document).ready(function(){
+			//1 点击按钮btn1，设置每个div的显示
+			$("#btn10000000").click(function(){
+				$("div").show(1000);
+			});
+
+			//2 点击按钮btn2，设置每个div的文字
+			$("#btn2").click(function(){
+				$("div").text("我是div的内容");
+			});
+			
+		});
+
+	</script>
+
+
+</head>
+<body>
+	<button id="btn1">显示盒子</button>
+	<button id="btn2">设置文字内容</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+
+
+</body>
+</html>

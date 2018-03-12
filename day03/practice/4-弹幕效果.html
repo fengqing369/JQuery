@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    html, body {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      font-family: "微软雅黑";
+      font-size: 62.5%;
+    }
+    
+    .boxDom {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .idDom {
+      width: 100%;
+      height: 100px;
+      background: #666;
+      position: fixed;
+      bottom: 0px;
+    }
+    
+    .content {
+      display: inline-block;
+      width: 430px;
+      height: 40px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+    
+    .title {
+      display: inline;
+      font-size: 4em;
+      vertical-align: bottom;
+      color: #fff;
+    }
+    
+    .text {
+      border: none;
+      width: 300px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 2.4em;
+    }
+    
+    .btn {
+      width: 60px;
+      height: 30px;
+      background: #f90000;
+      border: none;
+      color: #fff;
+      font-size: 2.4em;
+    }
+    
+    span {
+      width: 300px;
+      height: 40px;
+      position: absolute;
+      overflow: hidden;
+      color: #000;
+      font-size: 4em;
+      line-height: 1.5em;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  
+  </style>
+</head>
+
+<body>
+
+<div class="boxDom" id="boxDom">
+  <div class="idDom" id="idDom">
+    <div class="content">
+      <p class="title">吐槽:</p>
+      <input type="text" class="text" id="text"/>
+      <button type="button" class="btn" id="btn">发射</button>
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="../../jquery-1.12.4.js"></script>
+<!-- <script>
+  $(function(){
+    //基本步骤：
+    //1 点击发射按钮
+    //2 根据输入内容，创建一个盒子span
+    //3 给盒子设置left值(可视区域宽度 + 20)，显示在屏幕的右侧外部，设置一个随机的top值
+    //4 设置运动，运动到屏幕左侧以外(-300)
+    //5 运动完毕后删除盒子、
+    var $box = $("#boxDom"),
+    $ipt = $("#text"),
+    // 大部分颜色前面加上dark可以设置为深色形态
+    colorArr = ["darkred", "darkblue", "darkyellow", "darkbrown", "darkpink", "darkskyblue", "darkorange", "darkyellowgreen", "darkgreen", "darkpurple"]; 
+
+    $("#btn").click(function(){
+      $("<span>"+$ipt.val()+"</span>")//创建span标签
+      .appendTo($box)//添加到大盒子中
+      .css({
+        top:Math.random()*500,//设置span标签的top值
+        left:$(window).width()+20,//设置span标签的left值
+        color:colorArr[Math.floor(Math.random()*colorArr.length)]//设置span的文本内容颜色
+      })
+      .animate({//设置span的animate运动
+        left:-300
+      },5000,"linear",function(){//5秒匀速
+        $(this).remove();//span移除自身的内容结构
+      });
+      // 清空输入框内容
+      $ipt.val();
+    });
+
+  });
+</script> -->
+
+<!-- <script>
+  $(function(){
+    var $box = $("#boxDom"),$btn = $("#btn"),$ipt = $("#text");
+    var colorArr = ["red","green","yellow","blue","skyblue","pink","#9b4400","#7bcfa6","#60281e"];
+    $btn.click(function(){
+      $("<span>"+$ipt.val()+"</span>")
+      .appendTo($box)
+      .css({
+        top:Math.random()*500,
+        left:$(window).width() + 20,
+        color:colorArr[Math.floor(Math.random()*colorArr.length)]
+      })
+      .animate({
+        left:-300
+      },15000,"linear",function(){
+        $(this).remove()
+      });
+      $ipt.val("");
+    })
+  })
+</script> -->
+
+<script>
+  $(function(){
+    var $box = $("#boxDom"),$ipt = $("#text"),$btn = $("#btn");
+    var colorArr = ["#a3d900","#1685a9","#003472","#00bc12","#ff8c31","#ff7500","#f0c239","#4a4266","#9d2933","#ae7000"];
+    $btn.click(function(){
+      $("<span>"+$ipt.val()+"</span>")
+      .appendTo($box)
+      .css({
+        top:Math.random() * 500,
+        left:$(window).width()+20,
+        color:colorArr[Math.floor(Math.random()*colorArr.length)]
+      })
+      .animate({
+        left:-300
+      },6000,"linear",function(){
+        $(this).remove();
+      })
+      $ipt.val("");
+    });
+    
+  })
+</script>
+
+<!-- <script>
+  $(function(){
+    var $box = $("#boxDom"),$ipt = $("#text"),$btn = $("#btn");
+    var colorArr = ["red","blue","yellow","green","pink","skyblue","orange"]
+    $btn.click(function(){
+      $("<span>"+$ipt.val()+"</span>").appendTo($box).css({
+        left:$(window).width() + 20,
+        top:Math.random()*450,
+        color:colorArr[Math.floor(Math.random()*colorArr.length)]
+      })
+      .animate({
+        left:-300
+      },5000,"linear",function(){
+        $(this).remove();
+      });
+      $ipt.val("");
+    })
+  });
+</script> -->
+
+</html>

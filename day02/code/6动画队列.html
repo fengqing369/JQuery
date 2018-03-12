@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			display: none;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				//通过观察我们发现，jQuery的动画为排队形式触发的
+				//当前运动如果没有完毕，后面的其他运动会进行等待，执行完毕后，依次执行后续动画操作
+				//这种形式称为动画队列。
+
+				//需要解决这个动画队列的问题，达到新动画立刻执行的效果
+
+				//stop();
+				$("#box").slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000).slideDown(1000).slideUp(1000);
+			});
+
+
+			$("#stop").click(function(){
+				//stop()支持两个参数，都是布尔值
+				//参数1 是否清除动画队列
+				// $("#box").stop(true,false);
+
+				//参数2 是否跳转到当前动画最终效果
+				//这个参数如果为true，效果会出现跳跃，不友好，通常不使用
+				// $("#box").stop(false,true);
+
+				//结论：最常用的形式为两个false
+				//两个参数的默认值也是false，所以使用时直接调用stop()即可
+				// $("#box").stop(false, false);
+
+
+				//注意stop()的设置位置：在新运动之前
+				// 结合《5-下拉菜单（动画版案例）》
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">运动</button>
+	<button id="stop">执行stop方法</button>
+	<div id="box"></div>
+
+	<a href="案例结构/5-下拉菜单动画版/index.html">演示</a>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    .box {
+      width: 600px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      padding: 20px;
+    }
+    
+    textarea {
+      width: 450px;
+      height: 160px;
+      outline: none;
+      resize: none;
+    }
+    
+    ul {
+      width: 450px;
+      padding-left: 80px;
+    }
+    
+    ul li {
+      line-height: 25px;
+      border-bottom: 1px dashed #cccccc;
+    }
+    
+    input {
+      float: right;
+    }
+  
+  
+  </style>
+</head>
+<body>
+<div class="box" id="weibo">
+  <span>微博发布</span>
+  <textarea name="" id="txt" cols="30" rows="10"></textarea>
+  <button id="btn">发布</button>
+  <ul id="ul">
+  
+  </ul>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function(){
+    //1 点击按钮，检测用户输入的内容
+    // 表单元素的内容获取使用val()
+    var $txt = $("#txt"), $list = $("#ul");
+    $("#btn").click(function(){
+      if($txt.val() === ""){
+        alert("没写内容");
+      }else{
+        //2 根据内容进行结构创建，放入ul中即可
+        //$list.prepend('<li>' + $txt.val() + '<input type="button" value="删除"></li>');
+
+        //2.1 由于需要设置删除操作，可以使用prependTo将功能代码修改(没有改变实际功能)
+        // 操作创建的li，获取内部子元素input设置点击事件
+        // 删除父元素li即可
+        $('<li>' + $txt.val() + '<input type="button" value="删除"></li>') //创建的li以及input
+        .prependTo($list) // 放入到ul中
+        .children("input") // 获取子元素input
+        .click(function(){ //添加点击事件
+          $(this).parent().remove(); //删除父元素li
+        });
+      };
+
+      //3 清除输入框中的内容
+      $txt.val("");
+
+    });
+
+  });
+</script>
+
+</body>
+</html>

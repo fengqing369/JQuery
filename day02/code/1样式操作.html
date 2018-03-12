@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.colorRed{
+			background-color: red;
+		}
+		.colorBlue{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//1 css() 方法
+			//1.1 设置操作
+			$("#box").css("width","100px");
+			$("#box").css("height",100);
+			$("#box").css("background-color","red");
+			$("#box").css("fontSize","20px");
+
+			/*$("#box").css({
+				width:"100px",
+				height:100,
+				backgroundColor:"red",
+				"font-size":"20px"
+			});*/
+
+
+			//1.2 获取操作
+			// 获取时只推荐单个对象进行单个样式获取
+			//console.log($("div").css("width"));//不准确
+			//console.log($("#box").css("width"));//准确
+
+
+			//2 类名操作
+
+			//2.1 添加类名 addClass()
+			// 可以添加单个类名或多个类名，多个使用空格分隔
+			//$("#box").addClass("colorRed clearFix");
+
+			//2.2 移除类名 removeClass()
+			//使用方式：不传参移除所有，传单个或多个可以移除指定类名，顺序无关
+			// $("#box").removeClass();
+
+			//$("#box").removeClass("box");
+
+			//$("#box").removeClass("fl box");
+
+
+			//2.3 切换类名 toggleClass()
+			// 传入类名后，如果此类名已经存在，进行移除操作，如果不存在，进行添加操作
+			// $("#box").toggleClass("box");
+
+			// $("#box").toggleClass("colorRed");
+
+			// $("#box").toggleClass("box colorRed");
+
+
+			//2.4 检测类名 hasClass();
+
+			//2.4.1 单个标签单个类名检测(推荐)
+			//console.log($("#box").hasClass("colorRed"));
+
+
+			//2.4.2 单个标签多个类名检测
+			// 除非你能够确定类名的确切顺序，否则不要使用
+			//console.log($("#box").hasClass("fl box"));//false,虽然两个类名都有，但是检测的顺序不对，依然返回false
+
+			//2.4.3 多个标签的单个类名检测
+			// 多个标签中只要有任意一个标签具有指定类名时，即返回true 
+			//console.log($("div").hasClass("fr"));
+
+
+
+
+		})
+
+	</script>
+
+
+
+	<div id="box" class="box fl"></div>
+	<div></div>
+	<div class="fr"></div>
+	<div></div>
+
+
+</body>
+</html>

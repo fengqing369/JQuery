@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+		}
+		div{
+			width: 120px;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+
+			//jQuery的两大特性
+			//1 链式编程
+			//  所有的设置型操作后均可以继续操作当前对象
+			//$("#box").text("我是内容").css("backgroundColor","red").text("我是新内容");
+
+			//1.1 模拟链式编程操作
+			// js中函数的返回值设置原则：获取型操作必须设置返回值，设置型操作不需要设置返回值
+			// 链式编程实际上就是在设置型方法的最后设置return this操作
+			/*
+						var obj = { name : "jack" };
+						obj.getName = function(){
+							//获取型操作，必须设置返回值
+							return this.name;
+						};
+
+						obj.setName = function(xinName){
+							//设置型操作不需要设置返回值
+							this.name = xinName;
+
+							//不需要设置返回值不意味着不能设置
+							//可以设置任意的返回值，例如this，return this即可实现链式编程
+							return this;
+						};
+
+						//每次调用设置型操作后，返回值均为this，也就是obj，意味着可以继续使用obj的方法
+						obj.setName("rose").setName("jack").setName("zhangSan")
+
+						//如果调用了获取操作，则返回值为其他数据，例如name属性的值，此时则不能继续调用obj的功能了
+						obj.setName("rose").setName("jack").setName("zhangSan").getName();
+			*/
+
+
+			//2 隐式迭代（偷偷的遍历）
+			//  设置型操作可以进行隐式迭代
+			//  获取型操作无法进行隐式迭代
+
+			//设置型操作：
+			//$("div").text("我是div");
+
+
+			//下面这两个都是获取型操作：
+			//console.log($("div").text());
+			//虽然text方法获取的结果是所有内容，但是没有意义     我是box我是div我是div我是div我是div我是div
+
+
+			//console.log($("div").css("width"));
+			//样式内容的获取操作没有进行隐式迭代
+			//原因：就算有结果也没有意义
+			//  1 如果像上面一样是字符串的话无法使用
+			//  2 如果是数组结构的话，依然需要按照索引访问某一个
+
+
+
+
+		});
+	</script>
+</head>
+<body>
+	
+	
+<div id="box">1我是box</div>
+<div>1我是div</div>
+<div>2我是div</div>
+<div>4我是div</div>
+<div>3我是div</div>
+<div>5我是div</div>
+
+
+</body>
+</html>

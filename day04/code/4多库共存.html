@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	
+	<script src="test.js"></script>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		//如果$变量被其他库占用了，可以使用以下方式解决
+
+		//1 使用jQuery的另一个变量名：jQuery
+
+		//2 $占用了其他库的命名
+		// 可以使用$的一个方法， $.noConflict();
+		// 此方法作用很简单，就是让jQuery放弃对$的使用
+		$.noConflict();
+
+		//$为100
+		console.log($);
+
+		
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

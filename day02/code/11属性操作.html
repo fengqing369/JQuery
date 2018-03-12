@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//prop() - 用于获取标签的自带属性
+			/*console.log($("#box").prop("id"));//能获取
+			console.log($("input").prop("checked"));//能获取，值为布尔值
+			console.log($("#box").prop("data-hehe"));//不能获取*/
+
+
+
+			//attr() - 用于获取标签的自定义的属性
+			//console.log($("#box").attr("id"));//能获取
+			//console.log($("input").attr("checked"));//能获取，值不为布尔值
+			console.log($("#box").attr("data-hehe"));//能获取
+
+
+		});
+	</script>
+	<!-- 规范的写法是自定义属性前面加data- ， data-可以省略不写-->
+	<div id="box" data-hehe="呵呵呵"></div>
+	<input type="checkbox" checked="checked">
+
+</body>
+</html>

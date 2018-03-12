@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			
+			// clone()
+			//1 false表示深复制
+
+			// var $xinDiv = $("div").clone(false);
+			// $("body").append($xinDiv);
+
+			//2 true表示深深复制
+			// 不仅复制标签以及内部结构，还可以复制事件
+			// 注意区别：DOM中的cloneNode()无法进行事件的克隆
+
+			/*$("div").click(function(){
+				console.log("我是点击事件");
+			});
+
+			var $xinDiv = $("div").clone(true);
+			$("body").append($xinDiv);
+*/
+
+			//DOM中的克隆操作：
+			var div = document.getElementsByTagName("div")[0];
+			div.onclick = function(){
+				console.log("我是div");
+			};
+			var xinDiv = div.cloneNode(true);
+			document.body.appendChild(xinDiv);
+		
+		});
+	</script>
+
+
+	<div>
+		我是div
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../jquery-1.12.4.js"></script>
+</head>
+<body>
+  <ul id="box">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    $(function(){
+      // 隔行变色
+      $("#box>li:even").css("backgroundColor","green");
+      $("#box>li:odd").css("backgroundColor","pink").text("我是偶数组");
+
+
+
+      var obj = {
+        name:"张三"
+      };
+      obj.getName = function(){
+        return this.name;
+      }
+      obj.setName = function(newName){
+        this.name = newName;
+        return this;
+      }
+      obj.setName("李四").setName("王五").getName();
+        console.log(obj);
+        console.log(obj.name);
+      });
+
+    
+  </script>
+  
+</body>
+</html>

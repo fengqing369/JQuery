@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			/*display:none;*/
+			position: absolute;
+		}
+		#box{
+			top: 200px;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//animate()
+			//参数1：必选，要运动的样式值
+			//参数2：可选，运动时间
+			//参数3：可选，运动模式， "swing" - 变速    "linear" - 匀速
+			//参数4：可选，回调函数
+			$("#btn").click(function(){
+				$("#box").animate({
+					left:800
+				},1000,function(){
+					console.log("运动完毕了");
+				});
+				$("#box2").animate({
+					left:800
+				},1000,"linear",function(){
+					console.log("运动完毕了");
+				});
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">运动</button>
+	<div id="box"></div>
+	<div id="box2"></div>
+</body>
+</html>

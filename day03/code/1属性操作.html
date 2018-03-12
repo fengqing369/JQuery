@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//prop() 用于获取自带的行内属性
+
+
+		//attr() 用于获取自定义的行内属性
+		//console.log($("#box").attr("data-hehe", "我是新属性值"));
+
+
+		//data() 用于获取自定义的行内属性
+		//获取data-开头的行内自定义属性时，不用设置data-这几个字符
+		console.log($("#box").data("hehe"));
+
+		console.log($("#box").data("hehe"));//旧的值
+
+		//如果进行设置操作，不是直接修改行内的对应属性值，不影响使用
+		$("#box").data("hehe","我是新的值");
+		console.log($("#box").data("hehe"));//新的值
+
+		//好处：操作自定义行内属性时比较简便
+
+	});
+</script>
+
+
+<!-- 标签行内的自定义属性要求加data-前缀 -->
+<div id="box" data-hehe="aaaa"></div>
+
+</body>
+</html>

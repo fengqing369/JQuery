@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//下面四个方法与前面的四个方法对应，目的是为了完善jQuery的链式编程操作
+
+			//1 appendTo();
+			//$("#box").append($("p"));
+
+			//$("p").text("我是新的内容").appendTo($("#box"));
+
+			//2 prependTo();
+			// $("p").text("我是新的内容").prependTo($("#box"));
+
+
+			//3 insertAfter()
+
+			//4 insertBefore()
+			// 注意，与DOM中的insertBefore完全不同
+			// $("span").insertBefore($("#box"));
+
+		});
+	</script>
+
+
+	<div id="box">
+		<span>我是span</span>
+	</div>
+	<p>我是p标签</p>
+
+</body>
+</html>

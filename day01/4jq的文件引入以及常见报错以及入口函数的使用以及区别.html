@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		//要使用jq，先进行文件引入
+
+
+		//1 如果没有进行文件引入，使用jq的功能会出现报错
+		//  $ is not defined;
+		//2 如果引入文件，但是路径错误，报两个错
+		//  一个是资源引入错误，一个是$ is not defined
+
+
+
+		//入口函数：
+		//对比js与jq入口函数的区别
+		//1 观察发现，两个入口函数的执行顺序不同：先执行jq的入口函数，再执行js的入口函数
+		//2 原因：
+		//      js入口函数的执行时机：页面完全加载（页面结构，图片，文件）后执行
+		//      jq入口函数的执行时机：DOMReady - 页面结构加载完毕后执行
+
+		//	如果希望使用jq实现页面完全加载后执行代码的功能，只需要使用jq的事件设置方式给window对象设置一个onload事件即可，事件操作后面再说。
+
+		window.onload = function(){
+			console.log("我是js的入口函数");
+		};
+
+		//下面两种入口函数设置方式完全相同
+		//约定：第一天全使用$(document).ready()这种方式，以后使用$(function(){});种
+		$(document).ready(function(){
+			console.log("我是jq的入口函数");
+		});
+		$(function(){
+
+		});
+
+		//HOME键 - 跳到本行最前面
+		//END键 - 跳到本行最后
+		//shift - 选中操作键
+		//ctrl - 按词跳跃
+
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">我是div</div>
+	<div></div>
+	<div></div>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		//1 概念说明：
+		//DOM对象: 通过DOM的方式获取的对象
+		//jQuery对象：通过jQuery方式获取的对象
+
+		var box = document.getElementById("box");//DOM对象
+		var $box = $("#box");//jQuery对象
+
+		//console.dir(box);
+		//console.log($box);
+
+
+		//2 jQuery对象与DOM对象之间的关系：
+		//通过观察，我们发现，使用jQuery获取的标签被包裹在jQuery对象中，内部为DOM对象形式
+		//结论：jQuery对象是DOM对象的包装集
+
+
+		//3 使用上的区别：
+		// DOM对象只能使用DOM的功能，jQuery对象只能使用jQuery的功能
+		//box.innerHTML = "我是box的内容";//DOM对象可以使用DOM的功能
+		//box.text();//不能使用jQuery的功能
+
+		//$box.text("我是box的内容");//jQuery对象可以使用jQuery的功能
+		//$box.innerHTML = "我是box的内容";//不能使用DOM的功能
+
+
+		//4 DOM对象与jQuery对象进行相互转换操作
+		//4.1 将DOM对象转换为jQuery对象
+		// 方式：通过$()包裹DOM对象即可
+		//$(box).text("我是box的内容");
+
+		//4.2 将jQuery对象转换为DOM对象
+		// 方式： 使用[索引]取值方式或get方法均可，推荐使用[]方式
+		console.log($box[0]);
+		console.log($box.get(0));
+
+	</script>
+
+</body>
+</html>

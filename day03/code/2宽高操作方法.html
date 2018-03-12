@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			padding: 20px;
+			border: 10px solid #000;
+			margin:3px;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var $box = $("#box");
+
+			//注意：由于宽高操作类似，所以此例中以width系列方法为例。
+
+			//样式获取操作
+			//1 width() 用于获取元素的宽度 (只含有width的值)
+			//console.log($box.width());//100
+
+			//2 innerWidth() 用于获取元素的(padding + width)
+			//console.log($box.innerWidth());//140
+
+			//3 outerWidth() 用于获取元素的(border + padding + width)
+			//console.log($box.outerWidth());//160
+
+			//4 outerWidth(true) 用于获取元素的盒模型宽度(margin + border + padding + width)
+			//console.log($box.outerWidth(true));//166
+
+
+
+			//样式设置操作：下面的所有方式均修改的是width属性值
+			//1 width() 用于设置元素的宽度 (只含有width的值)
+			//$box.width(150);
+
+			//2 innerWidth() 用于设置元素的(padding + width)
+			// $box.innerWidth(150);
+			// console.log($box.innerWidth());//150
+
+			//3 outerWidth() 用于设置元素的(border + padding + width)
+			//$box.outerWidth(150);
+
+			//4 outerWidth(true) 用于设置元素的盒模型宽度(margin + border + padding + width)
+			// 设置盒模型宽度时，先传数，再传true
+			$box.outerWidth(180, true);
+			console.log($box.outerWidth());//174
+		});
+	</script>
+</head>
+<body>
+	
+	<div id="box"></div>
+
+</body>
+</html>

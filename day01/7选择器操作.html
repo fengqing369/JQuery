@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(document).ready(function(){
+			//1 标签选择器
+			//$("div").text("我是div");
+
+			//2 类选择器
+			//$(".box").text("我是类名为box的元素");
+
+			//3 id选择器
+			//$("#box").text("我是id为box的元素");
+
+			//4 子代选择器
+			//$("#list>li").css("backgroundColor","red");
+
+			//5 后代选择器
+			//$("#list li").css("backgroundColor","red");
+			
+
+			//过滤选择器
+			//$("ul>li:even").text("我是索引值为偶数的li");
+			//$("ul>li:odd").text("我是索引值为奇数的li");
+
+			//访问索引为指定值的元素：
+			//$("ul>li:eq(2)").text("我是第3个li");
+
+			
+			//隔行变色
+			$("ul>li:even").css("backgroundColor","red");
+			$("ul>li:odd").css("backgroundColor","green");
+		});
+	</script>
+</head>
+<body>
+<!-- 	<div id="box"></div>
+<div class="box"></div>
+<div></div>
+<ul id="list">
+	<li>
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li></li>
+</ul> -->
+
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+
+
+</body>
+</html>

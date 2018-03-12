@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			//筛选选择器可以让操作更加灵活：
+
+			//1 子代选择器 .children();
+			// 与 $("ul>li") 功能相似，区别在于此方法操作更灵活
+			// .children()  参数可选，可以设置选择器参数，表示子元素中的某些元素
+			//$("#list").css("width","100px").children(".item").css("backgroundColor","red");
+
+
+			//2 后代选择器 .find()
+			// 与 $("ul li") 相似
+			// 注意： find方法必须设置选择器参数，否则无效
+
+			//$("#list").find(".item").css("backgroundColor","red");
+
+
+			//3 parent() 
+			// 注意与parentNode的区别：parent()可能会获取到多个元素
+			// 参数可选，表示选择器
+			//$("p").parent(".box").css("backgroundColor","red");
+
+			//4 siblings() 用于获取同级元素
+			// 参数可选，表示选择器
+			//$(".item").siblings(".prev").text("我是同级元素");
+
+
+			//5 prev(); 前一个同级元素
+			// $(".item").prev().text("我是前一个元素");
+
+
+			//6 next(); 后一个同级元素
+			// $(".item").next().text("我是后一个元素");
+
+			//7 prevAll(); 前面所有同级元素
+
+			//8 nextAll(); 后面所有同级元素
+
+
+			//9 eq();
+			// 与 $("ul>li:eq(1)") 相似
+
+			var i = 1;
+			// 推荐使用eq()方法
+			// 如果索引值为变量形式，可能需要字符串拼接操作，使用较为不便
+			//$("ul>li:eq("+ i +")")
+
+			//eq方法的使用：
+			$("ul>li").eq(i).text("我是第二个li");
+			
+
+		});
+	</script>
+</head>
+<body>
+
+	<ul>
+		<li class="prev"></li>
+		<li class="prev"></li>
+		<li class="item">这是当前li</li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<!-- <div class="box">
+		<p >我是p标签</p>
+	</div>	<div>
+		<p >我是p标签</p>
+	</div>
+	<div>
+		<p >我是p标签</p>
+	</div> -->
+	
+	<!-- <ul id="list">
+		<li class="item">
+			<ul>
+				<li class="item"></li>
+			</ul>
+		</li>
+		<li></li>
+	</ul> -->
+
+</body>
+</html>

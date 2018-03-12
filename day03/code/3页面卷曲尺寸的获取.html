@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			width: 2000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//页面的滚动事件设置给window对象
+			$(window).scroll(function(){
+				//scrollLeft()  scrollTop()
+				//用于获取页面的卷曲尺寸
+				console.log($(this).scrollLeft(),$(this).scrollTop())
+
+			});
+
+		});
+	</script>
+
+</body>
+</html>

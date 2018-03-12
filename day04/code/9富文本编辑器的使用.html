@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 不是jQuery插件，单独的功能 -->
+	<form action="">
+		<textarea name="" id="txt" cols="30" rows="10"></textarea>
+		<button>提交</button>
+	</form>
+
+	<!-- 引入下面这两个文件即可 -->
+	<script src="ckeditor/ckeditor.js"></script>
+	<link rel="stylesheet" href="ckeditor/contents.css">
+
+	<script>
+		//1 获取元素
+		var txt = document.getElementById("txt");
+
+
+		//通过下面这个方法，可以将普通文本设置为富文本（有格式的文本）形式
+
+
+		//超文本：通过普通文本描述富文本的一种方式
+		CKEDITOR.replace("txt");
+
+
+	</script>
+
+</body>
+</html>

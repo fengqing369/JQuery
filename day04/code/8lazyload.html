@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			height: 800px;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script src="jquery.lazyload.js"></script>
+	<script>
+		$(function(){
+			$("img.lazy").lazyload();
+		});
+	</script>
+</head>
+<body>
+
+	<div id="box"></div>
+	<img class="lazy" data-original="img.jpg">
+	
+</body>
+</html>

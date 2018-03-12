@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+
+			//1 基本事件添加方式
+			/*$("#box").click(function(){
+				console.log("我是第一次设置的事件");
+			});
+			$("#box").mouseenter(function(){
+				console.log("我是第二次设置的事件");
+			});
+			$("#box").mouseleave(function(){
+				console.log("我是第二次设置的事件");
+			});*/
+
+			//问题：每个事件的设置的单独的，不方便后期的代码维护
+
+			//2 bind()
+			//2.1 基本使用
+			/*$("#box").bind("click", function(){
+				console.log("我是第一次设置的事件");
+			});*/
+
+			//2.2 通过对象传入方式，给某个元素设置多个事件
+			/*$("#box").bind({
+				click:function(){
+					console.log("我是第一次设置的事件");
+				},
+				mouseenter:function(){
+					console.log("我是第2次设置的事件");
+				},
+				mouseleave:function(){
+					console.log("我是第3次设置的事件");
+				}
+			});*/
+
+			//2.3 如果希望多个事件采用共同的事件处理程序，可以使用如下形式
+			/*$("#box").bind("click mouseenter mouseleave", function(){
+				console.log("我是box的事件代码");
+			});*/
+
+
+			/*$("p").bind("click", function(){
+				console.log("我是p标签");
+			});*/
+			//btn点击后向box内部动态添加p标签
+			//这些动态创建的p标签无法使用之前设置的事件
+			$("#btn").click(function(){
+				$("#box").append("<p>我是新创建的p标签</p>");
+			});
+
+
+			//3 delegate() 用于设置事件委托(事件代理)
+			/*$("#box").delegate("p", "click", function(){
+				console.log("我是p标签");
+			});*/
+
+
+
+			//4 on() 统一的事件设置方式 （重点）
+			//4.1 基本事件设置
+			/*$("#box").on("click", function(){
+				console.log("我是box");
+			});*/
+
+			//4.2 同时设置多个事件
+			/*$("#box").on("click mouseenter", function(){
+				console.log("我是box");
+			});*/
+
+			/*$("#box").on({
+				click:function(){
+					console.log("我是点击事件");
+				},
+				mouseenter:function(){
+					console.log("我是移入事件");
+				},
+				mouseleave:function(){
+					console.log("我是移出事件");
+				}
+			});*/
+
+
+			//4.3 事件委托
+			//参数2为选择器参数，如果不写，就是普通的事件设置，如果设置了，表示事件委托
+			/*$("#box").on("click", "p,span", function(){
+				console.log("我是p标签或span标签");
+			});*/
+
+
+
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">创建元素</button>
+	<div id="box">
+		<span>我是span</span>
+		<div>我是div</div>
+		<p>我是p标签</p>
+		<p>我是p标签</p>
+		<p>我是p标签</p>
+		<p>我是p标签</p>
+	</div>
+	
+</body>
+</html>

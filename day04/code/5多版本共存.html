@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	
+	<script src="jquery-1.12.4.js"></script>
+	<script src="jquery-2.2.4.js"></script>
+	<script src="jquery-3.0.0.js"></script>
+	<script>
+		//jquery的版本查看方式:$.fn.jquery
+		//console.log($.fn.jquery);
+
+		var $3 = $.noConflict();
+
+		console.log($3.fn.jquery);//3
+
+		//console.log($.fn.jquery);//2
+
+		var $2 = $.noConflict();
+
+		console.log($.fn.jquery);//1
+
+
+		//$为1.x版本  $2 为2.x版本  $3 为3.x版本
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>
